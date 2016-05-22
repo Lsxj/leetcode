@@ -1,0 +1,12 @@
+var moveZeroes = function(nums) {
+    var count = 0;//计算非0的个数
+    for(var i = 0 ;i < nums.length; i++){
+        if(nums[i] !== 0){
+            nums[count] = nums[i];
+            count++;
+        }
+    }
+    for(i = count;i<nums.length;i++){
+        nums[i]=0;
+    }
+};
