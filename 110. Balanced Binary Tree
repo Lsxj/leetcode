@@ -1,0 +1,25 @@
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isBalanced = function(root) {
+    if(root === null)
+        return true;
+    var differ = getDepth(root.left) - getDepth(root.right);
+    if(Math.abs(differ) <= 1)//如果左右子树深度差别小于1只能说明当前root是平衡的，不能代表所有节点都是平衡的
+        return (Boolean)(isBalanced(root.left)&isBalanced(root.right));
+    else
+        return false;
+};
+var getDepth = function(root){
+    if(root === null)
+        return 0;
+    return (Math.max(getDepth(root.left),getDepth(root.right))+1);
+};
