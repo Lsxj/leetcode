@@ -1,0 +1,17 @@
+/**
+ * @param {number} n
+ * @return {number}
+ */
+arr = [];
+var climbStairs = function(n) {
+    if(n == 1) return 1;
+    if(n == 2) return 2;
+    
+    if(n >= 3){
+        if(arr[n-2] === undefined)
+            arr[n-2] = climbStairs(n-2);
+        if(arr[n-1] === undefined)
+            arr[n-1] = climbStairs(n-1);
+        return arr[n-1]+arr[n-2]; 
+    }
+};
