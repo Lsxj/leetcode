@@ -1,0 +1,26 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function(s, t) {
+    if(s.length !== t.length)
+        return false;
+    
+    var s_array=[]; 
+    var t_array=[];
+    
+    for(var i=0;i<s.length;i++)
+        s_array.push(s[i]);
+        
+    for(var j=0;j<t.length;j++)
+        t_array.push(t[j]);
+        
+    s_array.sort();
+    t_array.sort();
+    
+    if(s_array.toString() == t_array.toString())
+        return true;
+    return false;
+        
+};
