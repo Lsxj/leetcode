@@ -1,0 +1,17 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    var hashTable = {};
+    var p;
+    for(var i = 0; i < nums.length; i++){
+        p = target - nums[i];
+        if(p in hashTable){
+            return [hashTable[p], i]
+        }
+        hashTable[nums[i]] = i;
+    }
+    return null;
+};
